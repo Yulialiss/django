@@ -6,5 +6,5 @@ urlpatterns = [
     path('calculator/', include('calculator_app.urls')),
     path('guess/', include('guess_game_app.urls')),
     path('hello/', include('hello_app.urls')),
-    path('', include('home_app.urls')),  # Додайте цей рядок
+    path('', include('home_app.urls')), 
 ]
