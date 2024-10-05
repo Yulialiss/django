@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Number</title>
+</head>
+<body>
+    <h1>Вгадай число</h1>
+    <p>{{ message }}</p>
+    <form method="post">
+        {% csrf_token %}
+        <input type="number" name="guess" placeholder="Enter your guess (1-100)" required>
+        <button type="submit">Вгадати</button>
+    </form>
+    <p>Number of guesses: {{ guesses }}</p>
+</body>
+</html>
