@@ -1,0 +1,60 @@
+/* Загальні стилі для body */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Стилі для навігаційного меню */
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 15px 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline; /* Вирівнює елементи в ряд */
+    margin-right: 20px; /* Відстань між елементами */
+}
+
+nav ul li a {
+    color: white; /* Колір тексту */
+    text-decoration: none; /* Видалення підкреслення */
+    padding: 5px 10px;
+    border-radius: 5px; /* Закруглені краї */
+}
+
+nav ul li a:hover {
+    background-color: #575757; /* Зміна фону при наведенні */
+}
+
+/* Основний контент */
+div {
+    padding: 20px;
+    margin: 20px;
+    background-color: white; /* Білий фон для контенту */
+    border-radius: 8px; /* Закруглені краї */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Тінь */
+}
+
+/* Стилі заголовків */
+h1, h2, h3 {
+    color: #333; /* Колір заголовків */
+}
+
+/* Стилі для абзаців */
+p {
+    margin-bottom: 15px; /* Відстань між абзацами */
+}
+
+/* Стилі для списків */
+ul {
+    margin-left: 20px; /* Відстань від лівого краю */
+}

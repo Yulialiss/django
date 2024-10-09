@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Learning English Project{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'main/style.css' %}">
+</head>
+<body>
+    <!-- Меню -->
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}">Головна</a></li>
+            <li><a href="{% url 'words' %}">Слова</a></li>
+            <li><a href="{% url 'dictionary' %}">Словник</a></li>
+            <li><a href="{% url 'tests' %}">Тести</a></li>
+        </ul>
+    </nav>
+
+    <!-- Основний контент -->
+    <div>
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
