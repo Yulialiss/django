@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - English Learning</title>
+    <link rel="stylesheet" href="{% static 'learning_app/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the English Learning Project!</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'lessons' %}">Lessons</a></li>
+
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>
