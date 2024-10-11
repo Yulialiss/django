@@ -1,0 +1,47 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    background-color: #007BFF; /* Фон меню */
+    padding: 10px; /* Внутрішні відступи */
+    border-radius: 5px; /* Закруглені кути */
+    margin-bottom: 20px; /* Відступ знизу меню */
+}
+
+nav ul {
+    list-style-type: none; /* Прибирає маркери списку */
+    padding: 0; /* Обнулення внутрішніх відступів */
+    margin: 0; /* Обнулення зовнішніх відступів */
+    display: flex; /* Вирівнювання елементів в ряд */
+}
+
+nav li {
+    margin-right: 20px; /* Відступ між пунктами меню */
+}
+
+nav a {
+    text-decoration: none; /* Прибирає підкреслення для посилань */
+    color: white; /* Білий колір тексту посилань */
+    font-weight: bold; /* Жирний текст */
+    padding: 5px 10px; /* Внутрішні відступи для покращення вигляду */
+    transition: background-color 0.3s; /* Анімація фону при наведенні */
+}
+
+nav a:hover {
+    background-color: #0056b3; /* Темніший колір фону при наведенні */
+    border-radius: 3px; /* Закруглені кути для активного стану */
+}
