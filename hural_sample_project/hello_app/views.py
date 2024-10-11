@@ -23,7 +23,6 @@ def hello(request):
     }
 
     response = render(request, 'hello_app/hello.html', context)
-
-    response.set_cookie('author', 'Hural')  # Замініть 'Hural' на ваше прізвище
+    response.set_cookie('author', 'Hural')
 
     return response
