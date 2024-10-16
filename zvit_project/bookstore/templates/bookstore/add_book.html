@@ -1,10 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Book</title>
 </head>
 <body>
-$END$
+    <h1>Add Book</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="title" placeholder="Enter book title" required>
+        <select name="author" required>
+            <option value="">Select Author</option>
+            {% for author in authors %}
+                <option value="{{ author.id }}">{{ author.name }}</option>
+            {% endfor %}
+        </select>
+        <input type="date" name="published_date" required>
+        <button type="submit">Add Book</button>
+    </form>
+    <a href="{% url 'bookstore:book_list' %}">View Books</a>
 </body>
 </html>

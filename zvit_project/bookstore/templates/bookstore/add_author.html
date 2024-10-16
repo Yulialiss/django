@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Author</title>
 </head>
 <body>
-$END$
+    <h1>Add Author</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="name" placeholder="Enter author's name" required>
+        <button type="submit">Add Author</button>
+        <p>Тут можеш додати своїх улюблених авторів і все про них.Головне що дуже просто.</p>
+    </form>
+    <a href="{% url 'bookstore:author_list' %}">Home_page</a>
 </body>
 </html>

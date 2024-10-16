@@ -19,14 +19,23 @@
     {% if greeting %}
         <h2>{{ greeting }}</h2>
     {% endif %}
+   <div>
+
+        <button onclick="myFunction()">Check your cookies</button>
+
+    <script>
+            function myFunction() {
+                let cookieString = "";
+                {% for key, value in cookies.items %}
+                cookieString += "{{ key }}: {{ value }}\n";
+                {% endfor %}
+                alert(cookieString);
+            }
+    </script>
+   </div>
 
     <p>Це ваш візит номер: {{ visit_count }}</p>
 
-    <h2>Ваші cookies:</h2>
-    <ul>
-        {% for key, value in cookies.items %}
-        <li>{{ key }}: {{ value }}</li>
-        {% endfor %}
-    </ul>
+
 </body>
 </html>
