@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Каталог товарів">
+    <title>Каталог товарів</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'mersedes_sait_app/cataloge_style.css' %}">
+
+</head>
+<body>
+
+<!-- Меню-->
+<nav class="navbar navbar-expand-lg ">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Mercedes-Benz</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' %}">Головна</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'catalog' %}">Каталог</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'about' %}">Про нас</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- Меню  -->
+
+<h1 class="text-center mt-4">Каталог товарів</h1>
+<div class="button-container">
+    <a href="{% url 'catalog' %}" class="btn custom-button-center">Усі</a>
+    <a href="{% url 'catalog' %}?type=Седан" class="btn custom-button-center">Седан</a>
+    <a href="{% url 'catalog' %}?type=SUV" class="btn custom-button-center">SUV</a>
+    <a href="{% url 'catalog' %}?type=Хетчбек" class="btn custom-button-center">Хетчбеки</a>
+    <a href="{% url 'catalog' %}?type=Кабриолет" class="btn custom-button-center">Кабриолет</a>
+</div>
+
+<main class="container rounded">
+    <div class="row">
+        {% for product in products %}
+        <div class="col-md-4 mb-4">
+            <div class="card" style="height: 100%;">
+                <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
+                <div class="card-body">
+                    <h5 class="product-title">{{ product.name }}</h5>
+                    <p class="product-model"><strong>Модель:</strong> {{ product.car_model }}</p>
+                    <p class="product-type"><strong>Тип:</strong> {{ product.car_type }}</p>
+                    <p class="product-color"><i class="bi bi-palette"></i> {{ product.color }}</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <p class="product-price">{{ product.price }}₴</p>
+                    </div>
+                </div>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <a href="{% url 'product_detail' product.id %}" class="btn btn-primary custom-button">Детальніше</a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p>Немає жодного продукту в каталозі.</p>
+        {% endfor %}
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div>
+            <i class="bi bi-facebook"></i>
+            <i class="bi bi-instagram"></i>
+            <i class="bi bi-twitter"></i>
+        </div>
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="{% url 'home' %}" class="text-white">Головна</a></li>
+            <li class="list-inline-item"><a href="{% url 'catalog' %}" class="text-white">Каталог</a></li>
+            <li class="list-inline-item"><a href="{% url 'about' %}" class="text-white">Про нас</a></li>
+        </ul>
+        <p>© 2024 Мій сайт. Всі права захищені.</p>
+
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-c7u2Z9vZ9eG+HUEHc7e0W4R7Yl5UmphZj2Ev8bC/gq2GR04jv6xK67eM2z9PLjFz" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'mersedes_sait_app/product_detail_style.css' %}">
+
+    <title>Деталі товару</title>
+
+</head>
+<body>
+
+<!-- Меню -->
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Mercedes-Benz</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'catalog' %}">Catalogue</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'about' %}">About</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- Меню -->
+<main class="container mt-4">
+    <div class="row">
+       <div class="col-md-6 d-flex flex-column align-items-start">
+            <h1>{{ product.name }}</h1>
+             <div class="d-flex justify-content-between align-items-center">
+                 <p class="product-price">${{ product.price }}</p>
+             </div>
+            <p><strong>Тип:</strong> {{ product.car_type }}</p>
+            <p><strong>Колір:</strong> {{ product.color }}</p>
+            <p>{{ product.details }}</p>
+            <img src="{{ product.image.url }}" alt="{{ product.name }}" class="img-fluid mb-3 custom-img">
+            <p class="mt-3">{{ product.details }}</p>
+        </div>
+
+        <div class="col-md-6">
+            <label class="d-block"><strong>Резерв 20 000 $</strong> </label>
+            <h3><strong>Зарезервувати</strong></h3>
+            <p>Зарезервуйте даний автомобіль прямо зараз із можливістю повного повернення коштів. Ми будемо очікувати на ваш візит для ознайомлення з автомобілем і завершення покупки, або ви можете продовжити пошук онлайн інших моделей. Ваш резерв буде вирахуваний з вартості, якщо ви вирішите придбати.</p>
+            <a href="{% url 'purchase_form' product.id %}" class="btn btn-primary custom-button ">Зареєструватися</a>
+
+            <!-- Переміщений акордеон -->
+            <div class="accordion-container">
+                <div class="accordion mt-4" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                               <strong>Опції</strong>
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                Cписок характеристик цієї моделі від виробника. Ознайомтеся з ним під час огляду автомобіля. Цей список не містить встановлених на автомобіль додаткових опцій і модифікацій.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <strong>Інше</strong>
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>Система екстреного виклику Mercedes-Benz</li>
+                                    <li>HANDS-FREE ACCESS</li>
+                                    <li>Індикація на панелі приладів статусу пасків безпеки позаду</li>
+                                    <li>Комунікативний модуль (LTE) для використання сервісів Mercedes me connect</li>
+                                    <li>Навігаційна система на жорсткому диску</li>
+                                    <li>Розширений функціонал MBUX</li>
+                                    <li>Підігрів сидінь водія та переднього пасажира</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                               <strong>Гарантійні умови</strong>
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <h2>Гарантійні умови</h2>
+                                <p>На всі нові легкові автомобілі Mercedes-Benz поширюється гарантія 2 роки без обмеження за пробігом.
+                                <br>На нові мікроавтобуси Mercedes-Benz V-Class поширюється гарантія 2 роки або 200 000 км пробігу*.
+                                <br>Гарантія не розповсюджується на B-Class Electric Drive та авто, що виготовлені не для ринку ЄС та України, які можна ідентифікувати за допомогою перших символів VIN-коду LE4.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div>
+            <i class="bi bi-facebook"></i>
+            <i class="bi bi-instagram"></i>
+            <i class="bi bi-twitter"></i>
+        </div>
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="{% url 'home' %}" class="text-white">Головна</a></li>
+            <li class="list-inline-item"><a href="{% url 'catalog' %}" class="text-white">Каталог</a></li>
+            <li class="list-inline-item"><a href="{% url 'about' %}" class="text-white">Про нас</a></li>
+        </ul>
+        <p>© 2024 Мій сайт. Всі права захищені.</p>
+
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

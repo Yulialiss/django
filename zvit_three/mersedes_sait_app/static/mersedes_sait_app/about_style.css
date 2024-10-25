@@ -1,0 +1,54 @@
+body {
+    background-color: #F5F5F5 !important;
+}
+
+.navbar {
+    background-color: #151515;
+}
+
+.navbar-brand {
+    color: #fff !important;
+}
+
+.navbar .nav-link {
+    color: #EEEEEE;
+    font-size: 18px;
+}
+
+.navbar .nav-link:hover {
+    color: darkgray;
+}
+.about-us {
+    padding: 50px;
+    text-align: center;
+}
+
+.about-us h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.about-us p {
+    font-size: 1.25rem;
+    color: #000000;
+}
+
+.custom-button {
+    background-color: #151515;
+    color: #F5F5F5;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.custom-button:hover {
+    background-color: #FFF078;
+    color: #151515;
+    transform: translateY(-2px);
+}
