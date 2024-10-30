@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Профіль користувача</title>
+</head>
+<body>
+    <h1>Профіль користувача: {{ user.username }}</h1>
+    <p>Ім'я: {{ user.first_name }}</p>
+    <p>Прізвище: {{ user.last_name }}</p>
+    <p>Email: {{ user.email }}</p>
+
+    <h2>Інші дані:</h2>
+
+    <a href="{% url 'logout' %}">Вийти</a>
+</body>
+</html>

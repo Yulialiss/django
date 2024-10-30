@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            background-color: #1e1e1e;
+            padding: 2em;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 1.8em;
+            color: #f0f0f0;
+            margin-bottom: 1em;
+        }
+
+        label {
+            display: block;
+            margin-top: 1em;
+            font-size: 1em;
+            color: #cccccc;
+            text-align: left;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 0.8em;
+            margin-top: 0.5em;
+            margin-bottom: 1em;
+            background-color: #333;
+            color: #f0f0f0;
+            border: 1px solid #555;
+            border-radius: 5px;
+        }
+
+        input[type="text"]:focus, input[type="password"]:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+
+          button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 1.5em;
+            border: none;
+            border-radius: 5px;
+            background-color: #705C53;
+            color: #FEEC37;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #FF6600;
+        }
+
+        .alert {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            font-size: 0.9em;
+            color: #fff;
+            text-align: left;
+        }
+        .alert-success {
+            background-color: #347928;
+            border: 1px solid #E7CCCC;
+        }
+        .alert-error {
+            background-color:#C62E2E;
+            border: 1px solid #EEDF7A;
+        }
+
+        .switch-link {
+            color: #B03052;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+
+        .switch-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Авторизація</h1>
+        <div class="messages">
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+       <form method="POST" action="{% url 'login' %}">
+            {% csrf_token %}
+            <label for="username">Ім'я користувача:</label>
+            <input type="text" name="username" required>
+
+            <label for="password">Пароль:</label>
+            <input type="password" name="password" required>
+
+            <button type="submit">Увійти</button>
+        </form>
+
+        <div style="margin-top: 1em; font-size: 0.9em;">
+            <span>Немає облікового запису?</span>
+            <a href="{% url 'register' %}" class="switch-link">Зареєструватися</a>
+        </div>
+    </div>
+</body>
+</html>

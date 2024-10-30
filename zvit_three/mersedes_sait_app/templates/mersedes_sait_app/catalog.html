@@ -38,12 +38,13 @@
 <!-- Меню  -->
 
 <h1 class="text-center mt-4">Каталог товарів</h1>
+
 <div class="button-container">
     <a href="{% url 'catalog' %}" class="btn custom-button-center">Усі</a>
     <a href="{% url 'catalog' %}?type=Седан" class="btn custom-button-center">Седан</a>
     <a href="{% url 'catalog' %}?type=SUV" class="btn custom-button-center">SUV</a>
     <a href="{% url 'catalog' %}?type=Хетчбек" class="btn custom-button-center">Хетчбеки</a>
-    <a href="{% url 'catalog' %}?type=Кабриолет" class="btn custom-button-center">Кабриолет</a>
+    <a href="{% url 'catalog' %}?type=Кабріолет" class="btn custom-button-center">Кабріолет</a>
 </div>
 
 <main class="container rounded">
@@ -58,7 +59,7 @@
                     <p class="product-type"><strong>Тип:</strong> {{ product.car_type }}</p>
                     <p class="product-color"><i class="bi bi-palette"></i> {{ product.color }}</p>
                     <div class="d-flex justify-content-between align-items-center">
-                        <p class="product-price">{{ product.price }}₴</p>
+                        <p class="product-price">{{ product.price }}$</p>
                     </div>
                 </div>
                 <div class="card-footer d-flex justify-content-between align-items-center">
