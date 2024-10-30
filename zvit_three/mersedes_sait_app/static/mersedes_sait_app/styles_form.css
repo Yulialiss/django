@@ -1,4 +1,3 @@
-/* Загальні стилі для каруселі */
 .car-container {
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -36,9 +35,8 @@
     width: 100%;
 }
 
-/* Стилі для модального вікна */
 .modal {
-    z-index: 1050; /* Впевніться, що модальне вікно завжди зверху */
+    z-index: 1050; /
 }
 
 .modal-header {

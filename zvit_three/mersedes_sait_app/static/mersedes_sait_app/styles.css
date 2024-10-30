@@ -200,7 +200,7 @@ footer {
 
 }
 footer p {
-    color: #ffffff; /* Білий текст для всіх абзаців у футері */
+    color: #ffffff;
 }
 footer a {
     color: #ffffff;
@@ -220,17 +220,17 @@ footer a:hover {
     color: #cccccc !important;
   }
 .section-five {
-    background-color:#F5F5F5; /* Білий фон для контейнера */
+    background-color:#F5F5F5;
     border-radius: 10px;
-    padding: 30px; /* Внутрішній відступ */
-    max-width: 1000px; /* Максимальна ширина контейнера */
-    margin: 0 auto; /* Центрування контейнера на сторінці */
+    padding: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 h1 {
-    font-size: 28px; /* Розмір заголовка */
+    font-size: 28px;
     margin-bottom: 20px;
-    color: #333; /* Колір заголовка */
+    color: #333;
 }
 
 .content {
@@ -241,26 +241,26 @@ h1 {
 
 .text-section {
     flex: 1;
-    padding-right: 20px; /* Відстань між текстом та зображенням */
+    padding-right: 20px;
 }
 
 p {
-    font-size: 16px; /* Розмір тексту */
-    line-height: 1.5; /* Міжрядковий інтервал */
-    margin-bottom: 20px; /* Відстань між текстом та кнопкою */
-    color: #666; /* Колір тексту */
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    color: #666;
 }
 
 
 .image-section {
     flex: 1;
     display: flex;
-    justify-content: center; /* Вирівнювання зображення по центру */
+    justify-content: center;
 }
 
 .image-section img {
     max-width: 800px;
     height:300px;
     width:500px;
-    border-radius: 10px; /* Заокруглення зображення */
-}
+    border-radius: 10px;
+    }
